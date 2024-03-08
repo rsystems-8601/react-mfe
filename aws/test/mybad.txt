@@ -1,0 +1,43 @@
+ ssh -i reboom-key-pair.pem ubuntu@15.207.254.188
+sudo apt install nginx
+sudo service nginx status
+
+
+Second Instance 
+
+lanuch instance
+    ***check**-->select BM securities in group policies
+    ***check**-->node server port 7001
+cd in C:\projects\aws
+ssh -i reboom-key-pair.pem ubuntu@15.206.189.23
+sudo apt install nginx
+sudo service nginx status
+     ***check**-->http://15.206.189.23/
+cd /
+ls
+cd /var/www
+sudo chown ubuntu:ubuntu html
+cd html
+     ***check**-->echo hello > index.html
+     ***check**-->http://15.206.189.23/
+
+ls -la (see file in list format)
+chmod 777 index.html
+cd ~  ***check**-->moving in user folder or drive like C drive in windows
+cd /
+cd home
+ls
+cd ubuntu 
+***check**-->now install react
+git clone https://github.com/rsystems-8601/react18demo.git
+cd react18demo
+cp -R build/* /var/www/html/
+***check**-->now install node
+sudo apt update
+sudo apt install nodejs
+sudo apt install npm
+sudo apt install yarn
+npm start
+
+
+

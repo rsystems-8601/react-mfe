@@ -1,0 +1,28 @@
+git config --global user.name "Pradeep Srivastav"
+git config --global user.email "pradeep.srivastav@rsystems.com"
+git config --global user.signingkey F455722C0649DA67
+git config --global commit.gpgsign true
+git config --global tag.gpgsign true
+git clone https://github.com/DizzionDevops/S_UI_Cosmos.git
+
+gpg --armor --export F455722C0649DA67
+
+gpg --list-secret-keys --keyid-format LONG
+
+gpg --full-generate-key
+
+git config --global user.signingkey 4A7C83649A3CFF0D!
+
+Feb-2024
+ssh-keygen -t ed25519 -C pradeep.srivastav@rsystems.com (enter thrice)
+go in folder C:\Users\Pradeep\.ssh  and open gitbash on this location
+and type---> ls (for see genrate public and private file)
+then type---> cat id_ed25519.pub
+then copy the public key
+open https://github.com/settings/keys
+add authentication key in github site
+now open again:  go in folder C:\Users\Pradeep\.ssh  and open gitbash on this location
+ssh -T git@github.com 
+then you system recognize for commit
+ (Hi rsystems-8601! You've successfully authenticated, but GitHub does not provide shell access.
+)

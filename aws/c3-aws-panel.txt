@@ -1,0 +1,92 @@
+search EC2 => Create Instance
+---------------------------------
+name and tage : reboom-aws
+AMI: ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20230919
+ami-0287a05f0ef0e9d9a
+instance type: t2.micro
+Key pair name: reboom-key-pair    {{key pair type: RSA , file foremat:.pem }}
+instanceid : i-01687fc4cffa627f9
+zone : ap-south-1a
+Instance ID
+ i-01687fc4cffa627f9 (reboom-aws)
+Public IPv4 address
+ 13.234.34.146 |open address 
+Private IPv4 addresses
+ 172.31.43.77
+Public IPv4 DNS
+ ec2-13-234-34-146.ap-south-1.compute.amazonaws.com
+*********************************
+
+Now generate pem fle 
+----------------------------
+
+
+click on connet to copy ubuntu@ec2-13-235-245-214.ap-south-1.compute.amazonaws.com
+
+open CMD
+C:\projects\aws>  ssh -i  reboom-key-pair.pem ubuntu@ec2-13-235-245-214.ap-south-1.compute.amazonaws.com
+or
+ ssh -i  reboom-key-pair.pem ubuntu@13.235.245.214
+
+with elastic ip : http://13.232.32.224/
+ssh -i  reboom-key-pair.pem ubuntu@ec2-13-232-32-224.ap-south-1.compute.amazonaws.com
+
+commands
+------------
+check OS: cat /etc/os-release
+check memory: free -m
+check cpu: lscpu
+disk size: df -h
+ip info: ip a
+current file path: pwd
+check user permission: ls -lh
+
+AWS Tutorials - 13 - Install Nginx in EC2 Instance | Deploy Sample Application In EC2 
+---------------------------------------------------------------
+sudo -i
+apt-get update
+nginx -t
+apt-get install nginx 
+result: {
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+}
+service nginx  status
+curl localhost
+cd /var/www/html/
+ls
+result {index.nginx-debian.html}
+cat index.nginx-debian.html   {for print content}
+echo "This is nginx page" > index.html {for print content}
+curl localhost 
+----------------------------------------------------
+
+
+
+-----------------------------------------------------
+second instance
+------------------------------------------------
+#!/bin/bash
+apt-get update
+apt-get install nginx -y
+echo "This is reboom page" > /var/www/html/index.html 
+
+ pscp -i C:/projects/aws/reboom-key-pair.pem C:/projects/aws/test.zip ubuntu@13.235.245.214:/var/www/html/
+
+ pscp -i d:/key/xxx.ppk d:/upload/jboss-eap-6.2.0.zip ubuntu@xxxxx.amazonaws.com:/home/ubuntu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
