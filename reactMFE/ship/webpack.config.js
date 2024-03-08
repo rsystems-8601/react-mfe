@@ -57,13 +57,13 @@ module.exports = (_, argv) => ({
         react: {
           singleton: true,
           requiredVersion: deps.react,
-          strictVersion: true,
-          eager: true,
+          // strictVersion: true,
+          // eager: true,
         },
         "react-dom": {
           singleton: true,
-          strictVersion: true,
-          eager: true,
+          // strictVersion: true,
+          // eager: true,
           requiredVersion: deps["react-dom"],
         },
       },
