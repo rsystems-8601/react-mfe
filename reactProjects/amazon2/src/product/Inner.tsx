@@ -8,7 +8,7 @@ function Inner() {
   const { id } = useParams();
   return (
     <div>
-      <p>This is inner page {id}</p>
+      <p>This is inner pages {id}</p>
       <button
         style={{
           background: theme?.light?.background,
