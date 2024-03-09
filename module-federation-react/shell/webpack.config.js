@@ -1,12 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const Dotenv = require('dotenv-webpack');
+
 const deps = require("./package.json").dependencies;
-const path = require("path");
-module.exports = (_, argv) => ({
+module.exports = {
   output: {
-     publicPath: "http://localhost:3201/",
-    //publicPath: "auto",
+    publicPath: "http://localhost:8080/",
   },
 
   resolve: {
@@ -14,9 +12,11 @@ module.exports = (_, argv) => ({
   },
 
   devServer: {
-    // static: path.join(__dirname, "dist"),
-    port: 3201,
+    port: 8080,
     historyApiFallback: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
 
   module: {
@@ -44,11 +44,11 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "flipkart",
+      name: "shell",
       filename: "remoteEntry.js",
       remotes: {
-        "billhost": "bill@http://localhost:3203/remoteEntry.js",
-        "shiphost": "ship@http://localhost:3202/remoteEntry.js"
+        app1: 'app1@http://localhost:8081/remoteEntry.js',
+        app2: 'app2@http://localhost:8082/remoteEntry.js',
       },
       exposes: {},
       shared: {
@@ -61,15 +61,10 @@ module.exports = (_, argv) => ({
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
-        "react-router-dom": {
-          singleton: true,
-          requiredVersion: deps["react-router-dom"],
-        },
       },
     }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new Dotenv()
   ],
-});
+};
