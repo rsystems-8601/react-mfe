@@ -1,0 +1,6 @@
+<p>counter works!</p>
+<h3>Counter with subscribe : {{counter}}</h3>
+<h3>Counter with async pipe : {{(counter$ | async).counter}}</h3>
+<h3>Counter with createFeatureSelector : {{counterbyfeature}}</h3>
+<h3>Counter with counterbyfeatureObserv$ : {{counterbyfeatureObserv$ | async}}</h3>
+<app-counter-buttons></app-counter-buttons>

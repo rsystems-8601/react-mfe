@@ -1,0 +1,30 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  
+<app-child (childEvent)="rahana($event)" ></app-child>
+  <div class="form-group">
+    <label for="firstName">First Name:</label>
+   <mat-form-field>
+    <input
+      type="text"
+      matInput
+      class="form-control"
+      id="username"
+      formControlName="username"
+      [appHighlight]=""
+    />
+    </mat-form-field>
+    <mat-form-field>
+    <input
+      type="text"
+      matInput
+      class="form-control"
+      id="password"
+      formControlName="password"
+    />
+  </mat-form-field>
+    <div *ngIf="myForm.get('username').hasError('required') && isSubmitted">
+      First name is required!
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

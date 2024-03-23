@@ -1,0 +1,23 @@
+<form id="loginForm" (ngSubmit)="onSubmit(loginForm.value, loginForm)" #loginForm="ngForm">
+  <p>
+    <input id="username" name="username" [(ngModel)]="username" required maxlength="88" 
+    minlength="7" />
+  </p>
+
+  <p></p>
+  <p>
+    <input id="password" matInput name="password" [(ngModel)]="password" required 
+    maxlength="88" 
+    minlength="7" matInput [ngStyle]="{width:'250px'}" [ngClass]="{'error':true}"/>
+  </p>
+  <p>
+    <input id="age" matInput name="age" [(ngModel)]="age" required 
+    maxlength="88"  (keyup)="addIncrement()"
+    minlength="1" matInput [ngStyle]="{width:'250px'}" />
+  </p>
+  <p>
+    <button type="submit" [disabled]="loginForm.invalid"> Save </button>
+  </p>
+
+  <p></p>
+</form>
