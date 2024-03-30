@@ -10,5 +10,6 @@ function calculateCurr(num) {
   return this.sum;
 }
 
-const resultCurr = calculateCurr(1)(2)(3)(4);
+const resultCurr = calculateCurr(1)(2)(3)(4)(5)(5);
 resultCurr();
+//gg[4,5,6,7,8,9]

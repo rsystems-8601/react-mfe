@@ -6,6 +6,7 @@ Array.prototype.myUcase = function() {
 var fruitsd = ["Banana", "Orange", "Apple", "Mango"];
 fruitsd.myUcase();
 fruitsd;
+
 // another example
 // function Person(first, last, age, eye) {
 //   this.firstName = first;

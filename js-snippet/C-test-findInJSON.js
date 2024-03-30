@@ -4,7 +4,7 @@ const candidate= [{name: "rohit", city:"banglore", salary: 40000, },
             {name: "amit", city:"banglore", salary: 42000},
             {name: "rahul", city:"agra", salary: 32000}];
 const vacancy =[{city: "agra", salary: 40000, age:25},
-                {city: "banglore", salary: 50000, age:25}];
+                {city: "banglore", salary: 40000, age:25}];
 
 function foundKey(...rest){ 
 const vacancyCity =  vacancy.map(function(item) {
