@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\avengers2.props" />
-</Project>
