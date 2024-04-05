@@ -3,7 +3,7 @@ https://www.youtube.com/watch?v=3jXtTSnA8zw&t=10s
 // CD=> COntinuous Deployment
 action=> create workflow
 setting => action / action runner 
-sch.sh 
+svc.sh 
 cd /etc/nginx
 cd sites-available
 
